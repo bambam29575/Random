@@ -1,0 +1,23 @@
+#include <stdio.h>
+int fibonacci(int n){
+    if(n == 1){
+        return 1;
+    }
+    if(n == 0){
+        return 0;
+    }
+    
+    int value = fibonacci(n-1) + fibonacci(n-2);
+    return value;
+}
+
+
+int main()
+{
+    int num;
+    scanf("%d",&num);
+    
+    printf("The fibonacci of %d is %d",num,fibonacci(num));
+
+    return 0;
+}
