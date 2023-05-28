@@ -1,0 +1,22 @@
+#include <stdio.h>
+int sum(int array[], int size){
+    int i,sum = 0;
+    for(i = 0; i < size; i++){
+        sum = sum + *(array + i);
+    }
+    
+    return sum;
+}
+
+
+
+int main()
+{
+   int array[] = {1,2,3,4,5,6}, size = sizeof(array)/sizeof(int);
+   
+   printf("Sum of all integers of the array is %d ", sum(array,size));
+
+    return 0;
+}
+
+//(mypov) array contains address of array[1] element but array[i] contains array[i].
