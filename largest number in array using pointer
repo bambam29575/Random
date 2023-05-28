@@ -1,0 +1,21 @@
+#include <stdio.h>
+int largest(int *arr, int size){
+    int largest = *arr, temp;
+    for(int i = 1; i < size; i++){
+        if (*(arr + i) > largest){
+            temp = largest;
+            largest = *(arr + i);
+            *(arr + i) = temp;
+        }
+        
+    }return largest;
+}
+
+int main()
+{
+   int arr[] = {1,2,5,7,3,4}, size = sizeof(arr)/sizeof(arr[0]);
+   
+   printf("The largest integer in array is %d", largest(arr,size));
+
+    return 0;
+}
