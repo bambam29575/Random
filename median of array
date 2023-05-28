@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+void sort(int arr[], int size){
+    int i,j,temp;
+    for(i = 0; i < size-1; i++){
+        for(j = 0; j < size-i-1; j++){
+            if(arr[j] > arr[j+1]){
+                temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+            }
+        }
+    }
+}
+
+float median(int arr[], int size){
+    
+    sort(arr,size);
+    if(size%2 == 0){
+        return (float)(arr[size/2]+arr[(size/2)-1])/2;
+    }else return (float)arr[size/2];
+}
+
+int main()
+{
+    int arr[10] = {10,9,8,7,6,5,4,3,2,1}, size = 10;
+    printf("The value of median is %f", median(arr,size));
+
+    return 0;
+}
