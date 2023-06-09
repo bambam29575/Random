@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int array[3][2], row, col, largestRow;
+    largestRow = 0;
+    for(col = 0; col < 2; col++){
+        for(row = 0; row < 3; row++){
+            cin >> array[row][col];
+        }
+    }
+    
+    for(row = 0; row < 3; row++){
+    for(col = 0; col < 2; col++){
+         cout << array[row][col] << " ";
+        }cout << endl;
+    }
+    for(row = 0; row < 3; row++){
+        int sum = 0;
+        for(col = 0; col < 2; col++){
+        sum += array[row][col];
+        }
+        cout << sum << " " << endl;
+        if (sum > largestRow ){
+            largestRow = sum;
+        }
+    }
+    cout << "The largest sum row is : " << largestRow;
+    return 0;
+}
