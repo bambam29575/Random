@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+
+int primeNum(int num){
+    int count = 0, i, j;
+    if (num == 0 || num == 1){
+        return count;
+    }
+    if(num == 2){
+        return count++;
+    }count++;
+    for(i = 3; i < num; i++){
+        int flag = 0;
+        for(j = 2; j < i; j++){
+            if(i%j == 0){
+                flag++;
+            }
+        }
+        if(flag == 0){
+            count++;
+        }
+    }
+    return count;
+}
+
+int main()
+{
+    int num;
+    cin >> num;
+    int total = primeNum(num);
+    cout << "There are " << total << " Prime numbers below " << num;
+    
+    return 0;
+}
+
