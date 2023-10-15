@@ -2,6 +2,7 @@
 
 int main() {
     int voters, BJP = 0, Congress = 0, JDU = 0, count = 0, input;
+    printf("Enter no of voters\n");
     scanf("%d", &voters);
     
     while(count < voters){
