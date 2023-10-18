@@ -1,25 +1,25 @@
  #include <stdio.h>
 
 int main() {
-    int voters, BJP = 0, Congress = 0, JDU = 0, count = 0, input;
+    int voters, party1 = 0, party2 = 0, party3 = 0, count = 0, input;
     printf("Enter no of voters\n");
     scanf("%d", &voters);
     
     while(count < voters){
-        printf("Enter your choice , 1 for BJP , 2 for Congress, 3 for JDU: ");
+        printf("Enter your choice , 1 for party1, 2 for party2, 3 for party3: ");
         scanf("%d", &input);
 
         switch(input){
             case 1:
-            BJP++;
+            party1++;
             break;
             
             case 2:
-            Congress++;
+            party2++;
             break;
 
             case 3:
-            JDU++;
+            party3++;
             break;
 
             default:
@@ -28,12 +28,12 @@ int main() {
         }
         count++;
     }
-    if(BJP > Congress && BJP > JDU){
-        printf("BJP wins");
-    }else if (Congress > BJP && Congress > JDU){
-        printf("Congress wins");
-    }else if (JDU > BJP && JDU > Congress){
-        printf("JDU wins");
+    if(party1 > party2 && party1 > party3){
+        printf("party1 wins");
+    }else if (party2 > party1 && party2 > party3){
+        printf("party2 wins");
+    }else if (party3 > party1 && party3 > party2){
+        printf("party3 wins");
     }else{
         printf("Nobody wins");
     }
