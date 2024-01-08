@@ -7,8 +7,8 @@ struct node{
 };
 
 struct node *ptr, *head, *tail, *temp;
-    char ch;
-    int count = 1;
+    char ch1, ch2;
+    int count = 0, number;
 
 void create (){
     cout <<"Enter yout first data" << endl;
@@ -17,17 +17,40 @@ void create (){
     head = ptr;
     tail = ptr;
 
-    do{
+    cout << "Do you want to create next node ? " << endl;
+    cin >> ch1 ;
+    while(ch1 == 'y'){
         count++;
-        cout << "Enter the next data" << endl;
         ptr = (struct node *) malloc(sizeof(struct node));
+        cout << "Enter the data" << endl;
         cin >> ptr->data;
-        tail->link = ptr;
-        tail = ptr;
+        cout << "Position?" <<endl;
+        cin >> ch2;
+        if(ch2 == 'h'){
+            head->link = ptr;
+            head = ptr;
+        }
+        else if(ch2 == 't'){
+            tail->link = ptr;
+            tail = ptr;
+        }
+        else if(ch2 == 'm'){
+            cout << "Enter the position number : " ;
+            cin >> number;
+            temp = head;
+            for(int i = 1; i < number-1; i++){
+                temp = temp->link;
+            }
+            ptr->link = temp->link;
+            temp->link = ptr;
+        }else{
+            cout << "Invalid Choice " << endl;
+        }
         cout << "Do you want to create next node ? " << endl;
-        cin >> ch ;
+        cin >> ch1 ;
 
-    }while(ch == 'y');
+    }
+    return;
 
 }
 
@@ -41,7 +64,7 @@ void printLinkedlist(){
 }
 
 int main(){
-
+    cout << "h for head, t for tail, m for middle, y for yes" << endl;
     create();
     printLinkedlist();
 
