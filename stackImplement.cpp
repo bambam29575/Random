@@ -1,44 +1,60 @@
+
 #include <iostream>
 using namespace std;
 
-int array[100], top = -1;
+int stack[100], top = -1, input; char ch, ch2;
 
-void push(int num){
-    top++;
-    array[top] = num;
-    return;
-}
-void pop(){
-    array[top] = '\0';
-    top--;
-    return;
-}
-void peek(){
-    cout << "Top element : " << array[top] << endl;
-    return;
-}
-void printStack(){
-    for(int i = 0; i <= top; ++i)
-    {
-        cout << array[i] << " ";
-    }
-    cout << endl;
-    return;
-}
-int main(){
-    push(10);
-    push(20);
-    push(30);
-    printStack();
-    pop();
-    printStack();
-    peek();
-    push(40);
-    push(50);
-    printStack();
-    pop();
-    printStack();
-    peek();
+void push();
+void pop();
+void peek();
+void printStack();
+void stackArr();
+
+int main() {
+    stackArr();
 
     return 0;
 }
+void push(){
+        cout << "which item you want to push?" << endl;
+        cin >> input;
+        top++;
+        stack[top] = input;
+        printStack();
+        stackArr();
+        return;
+        
+    } 
+    void pop(){
+        stack[top] = '\0';
+        top--;
+        cout << "Do you want to pop more item?" << endl;
+        cin >> ch2;
+        printStack();
+        stackArr();
+        return;
+    }
+    void peek(){
+        cout << stack[top] << endl;
+        return;
+    }
+    void printStack(){
+        cout <<"Stack: ";
+        for(int i = 0; i <= top; i++){
+            cout <<  stack[i]<< " ";;
+        }
+        cout << endl;
+    }
+    void stackArr(){
+    cout << "Push p, pop d, peek s" << endl << "Which operation do  you want to perform?" << endl;
+    cin >> ch;
+    if (ch == 'p'){
+        push();
+    }else if(ch == 'd'){
+        pop();
+    }else if(ch == 's'){
+        peek();
+    }else{
+        cout << "Invalid choice" << endl;
+    }
+    }
