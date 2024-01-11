@@ -28,14 +28,15 @@ void push(){
     void pop(){
         stack[top] = '\0';
         top--;
+        printStack();
         cout << "Do you want to pop more item?" << endl;
         cin >> ch2;
-        printStack();
         stackArr();
         return;
     }
     void peek(){
         cout << stack[top] << endl;
+        stackArr();
         return;
     }
     void printStack(){
@@ -54,7 +55,8 @@ void push(){
         pop();
     }else if(ch == 's'){
         peek();
-    }else{
+    }else if(ch == 'e'){
+        
+    }else
         cout << "Invalid choice" << endl;
-    }
     }
