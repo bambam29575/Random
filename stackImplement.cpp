@@ -26,17 +26,28 @@ void push(){
         
     } 
     void pop(){
+    	if(top == -1){
+    		cout << "Stack Underflow" << endl;
+		}else if(top != -1){
         stack[top] = '\0';
         top--;
+    }
+	if(top != -1){
         printStack();
-        cout << "Do you want to pop more item?" << endl;
-        cin >> ch2;
+    }
         stackArr();
         return;
     }
     void peek(){
+    	if(top == -1){
+    		cout << "Stack Underflow" << endl;
+    		
+		}else if(top != -1){
+		
         cout << stack[top] << endl;
-        stackArr();
+        
+    }
+    stackArr();
         return;
     }
     void printStack(){
